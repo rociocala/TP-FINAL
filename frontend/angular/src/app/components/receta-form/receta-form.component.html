@@ -1,0 +1,76 @@
+<section class="imangen"
+    style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230617/pngtree-rectangular-shelf-in-light-brown-tones-a-3d-rendered-background-perfect-image_3639918.png');">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <br>
+            <div class="letra3">
+                <h3>🥘🍽️ Recetas 🥂🥗</h3>
+                <br>
+            </div>
+            <button type="submit" (click)="volverLista()" class="btn btn-dark">Volver Lista</button>
+
+            <form class="p-3" style="background-color: bisque;" #recetaForm="ngForm">
+                <div class="row">
+                    <div class="col">
+                        <label for="nombre" class="form-label" style="font-weight: bold;">Nombre</label>
+                        <input type="text" class="form-control form-control-sm" placeholder="Ingrese Nombre" id="nombre"
+                            [(ngModel)]="nombre" name="nombre">
+                    </div>
+                </div>
+<br>
+                <div class="row">
+                    <div class="col">
+                        <label for="descripcion" class="form-label" style="font-weight: bold;">Descripcion:</label>
+                        <textarea id="descripcion" type="text" class="form-control" placeholder="Ingrese Descripcion"
+                            [(ngModel)]="descripcion" name="descripcion"></textarea>
+                    </div>
+
+                    <div class="col">
+                        <label for="precio" class="form-label" style="font-weight: bold;">Precio</label>
+                        <input type="number" class="form-control form-control-sm" placeholder="Ingrese precio"
+                            id="precio" [(ngModel)]="precio" name="precio">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <h3>Ingredientes para la Receta</h3>
+                    <p>Seleccione uno a uno los ingredientes para incluir en la receta</p>
+                    <div class="col">
+                        <label for="productos" class="form-label" style="font-weight: bold;">Producto</label>
+                        <select class="form-select" aria-label="Default select example"
+                            placeholder="Ingrese un Espectador" [(ngModel)]="productoSeleccionado" name="productos">
+
+                            <option *ngFor="let productos of todosProductos" [ngValue]="productos">{{productos.nombre}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="cantidadProducto" style="font-weight: bold;">Cantidad</label>
+                        <input class="form-control" type="number" name="cantidadProducto"
+                            [(ngModel)]="cantidadProducto" />
+                    </div>
+                    <br><br>
+                    <button class="btn btn-dark w-50" (click)="agregarProductoAlPedido()">Agregar Ingrediente</button>
+                </div>
+            </form>
+            <div class="letra3">
+            <h3 class="text-center" style="font-weight: bold;">Guardar producto/s a Recetas 🥂🥗</h3>
+        </div>
+            <div style="background-color: bisque;">
+                <div class="col-12">
+                    <ul class="list-group">
+                        <li class="list-group-item" *ngFor="let producto of recetaNuevo.obProducto">
+                            {{ producto.nombre }} - Cantidad: <input class="form-control" type="number"
+                                [(ngModel)]="producto.cantidad" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button type="submit" (click)="registrar()" class="btn btn-dark">Registrar Receta</button>
+            <!--<button  type="submit" (click)="actualizarReceta()"
+                class="btn btn-warning">Actualizar</button>-->
+            <button type="submit" (click)="volverLista()" class="btn btn-dark">Volver Lista</button>
+            <br><br>
+        </div>
+    </div>
+</section>

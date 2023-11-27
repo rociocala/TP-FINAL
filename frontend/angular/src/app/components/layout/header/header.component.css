@@ -1,0 +1,58 @@
+
+    /* Estilos personalizados */
+    body {
+        background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230617/pngtree-rectangular-shelf-in-light-brown-tones-a-3d-rendered-background-perfect-image_3639918.png');
+        background-size: cover;
+        background-position: center;
+      }
+  
+      header {
+        background-color: #333;
+        padding: 10px 0;
+      }
+  
+      .navbar {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+  
+      .navbar-brand {
+        font-size: 18px;
+        color: #fff !important;
+      }
+  
+      .navbar-nav .nav-link {
+        color: #fff !important;
+        font-size: 16px;
+        margin-right: 10px;
+        transition: transform 0.3s, color 0.3s;
+      }
+  
+      .navbar-nav .nav-link:hover {
+        color: #f8f9fa !important;
+        transform: scale(1.1);
+      }
+  
+      .navbar-nav .nav-link.active {
+        color: #f8f9fa !important;
+        transform: scale(1.1);
+        font-weight: bold;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        padding: 5px 10px;
+      }
+  
+      .navbar-nav .nav-link.logout {
+        margin-right: 0 !important;
+      }
+  
+      .navbar-collapse {
+        transition: height 0.3s;
+      }
+  
+      .navbar-toggler:focus,
+      .navbar-toggler:active {
+        outline: none;
+        box-shadow: none;
+      }
+  

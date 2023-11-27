@@ -1,0 +1,76 @@
+<section
+  style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230617/pngtree-rectangular-shelf-in-light-brown-tones-a-3d-rendered-background-perfect-image_3639918.png');">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <br>
+      <h3 style="background-color: rgb(32, 32, 32); color: aliceblue;" class="text-center">🥘🥣🧼Ingresar Producto
+        🥘🥣🧼
+      </h3>
+      <form class="container p-5" style="background-color:rgb(219, 184, 132);">
+        <div class="row mb-4">
+          <div class="col">
+            <label>Nombre</label>
+            <input type="text" class="form-control form-control-lg" name="nombre" placeholder="Ingrese Nombre"
+              id="nombre" [(ngModel)]="producto.nombre" name="nombre" required #nombre="ngModel">
+          </div>
+
+          <div class="col">
+            <label for="categoria">Categoría</label>
+            <select name="categoria" [(ngModel)]="producto.categoria" class="form-control form-control-lg"
+              id="categoria">
+              <option disabled>elija</option>
+              <option value="limpieza">Lacteos</option>
+              <option value="verduras">Verduras</option>
+              <option value="frutas">Frutas</option>
+              <option value="frutas">Cereales</option>
+              <option value="frutas">Harinas</option>
+              <option value="frutas">Especias</option>
+              <option value="frutas">Panificados</option>
+              <option value="frutas">Carnes</option>
+              <option value="frutas">Aceites</option>
+            </select>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col">
+            <label for="tipo">Tipo</label>
+            <input name="tipo" [(ngModel)]="producto.tipo" type="text" class="form-control form-control-lg" id="tipo"
+              placeholder="Ingrese el tipo">
+          </div>
+
+          <div class="col">
+            <label for="costo">Costo</label>
+            <input name="costo" [(ngModel)]="producto.costo" type="number" class="form-control form-control-lg"
+              id="costo" placeholder="Ingrese el costo">
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col">
+            <label for="proveedor">Proveedor</label>
+            <input name="proveedor" [(ngModel)]="producto.proveedor" type="text" class="form-control form-control-lg"
+              id="proveedor" placeholder="Ingrese el proveedor">
+          </div>
+
+          <div class="col">
+            <label for="stock">Stock</label>
+            <input name="stock" [(ngModel)]="producto.stock" type="number" class="form-control form-control-lg"
+              id="stock" placeholder="Ingrese el stock">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <button *ngIf="accion=='new'" type="submit" (click)="registrar()" class="btn btn-dark">Registrar
+              Producto</button>
+            <button *ngIf="accion=='update'" type="submit" (click)="actualizarProducto()"
+              class="btn btn-warning">Actualizar</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button (click)="volverLista()" type="submit" class="btn btn-dark btn-lg">Volver a la lista</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

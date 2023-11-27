@@ -1,0 +1,72 @@
+<section class="imangen"
+  style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230617/pngtree-rectangular-shelf-in-light-brown-tones-a-3d-rendered-background-perfect-image_3639918.png');">
+  <br>
+  <div class=" container bg-dark border-5 text-center">
+    <h2 class="text-white "> 💵💰 Formulario Pago 💵💰</h2>
+  </div>
+  <br>
+  <div class="container alert alert-secondary" style="background-color: rgb(245, 194, 132);">
+    <form class="row" style="padding: 3%; ">
+      <div *ngIf="band" class="alert alert-danger">
+        <div>
+          DEBE INGRESAR TODOS CAMPOS DEL FORMULARIO.
+        </div>
+      </div>
+      
+      <div class="">
+        <label class="form-label">Cliente y Mesa de Pedido</label>
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="pedidoSeleccionado"
+          name="pedidoSeleccionado">
+          <option selected disabled value="">Elegir...</option>
+          <option *ngFor="let pedido of pedidos" [ngValue]="pedido">Cliente {{pedido.nombreCliente}} de la mesa {{pedido.mesa}}
+          </option>
+
+        </select>
+      </div>
+
+      <div class="col-md-3 position-relative">
+        <label for="validationTooltip04" class="form-label">Metodo de Pago</label>
+        <select [(ngModel)]="pago.metodo" name="motodo" class="form-select" aria-label="Default select example">
+          <option selected disabled value="">Elegir...</option>
+          <option>Contado</option>
+          <option>Debito</option>
+          <option>Credito</option>
+        </select>
+      </div>
+      <div class="col-md-4 position-relative">
+        <label for="validationTooltip03" class="form-label">Horario de Pago</label>
+        <input type="time" class="form-control" id="validationTooltip03" required [(ngModel)]="pago.horario"
+          name="horario">
+      </div>
+      <div class="col-md-4 position-relative">
+        <label for="validationTooltip05" class="form-label">Dia de Pago</label>
+        <input type="date" class="form-control" id="validationTooltip05" required [(ngModel)]="pago.fecha" name="fecha">
+      </div>
+      <div class="col-md-3 position-relative">
+        <label for="validationTooltip05" class="form-label">Nota</label>
+        <input type="text" class="form-control" id="validationTooltip05" required [(ngModel)]="pago.nota" name="nota">
+      </div>
+      <!--<div class="col-md-3 position-relative">
+        <label for="validationTooltip05" class="form-label">Mesa</label>
+        <input type="text" class="form-control" id="validationTooltip05" required [(ngModel)]="pago.mesa" name="mesa">
+      </div>
+
+
+      <div class="col-md-4 position-relative">
+        <label for="validationTooltip02" class="form-label">Total: </label>
+        <input type="text" class="form-control" id="validationTooltip05" required [(ngModel)]="pago.total" name="total">
+      </div>-->
+
+      <div class="col-12">
+        <br>
+        <button class="btn btn-dark" type="submit" (click)="guardarPago()">Agregar
+          Pago</button>
+        <!--<button *ngIf="accion=='update'" class="btn btn-primary offset-1" type="submit"
+          (click)="actualizarPago()">Actualizar Pago</button>-->
+        <button class="btn btn-dark offset-1" type="submit" (click)="listarPagos()">Listar Pagos</button>
+        
+      </div>
+    </form>
+  </div>
+  <br>
+</section>
