@@ -1,0 +1,27 @@
+version: "3"
+services:
+  contenedor-backend:
+    container_name: contenedor-backend
+    image: rociocala/backend:latest
+    ports:
+      - "3001:3000"
+    environment:
+      - DB_URI=mongodb+srv://rociocala:navidad2022@clusterfinal.ar3n235.mongodb.net/proyectobdFinal
+    
+  contenedor-frontend:
+    container_name: contenedor-frontend
+    image: rociocala/frontend:latest
+    ports:
+      - "8080:80"
+
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower-container
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_POLL_INTERVAL=10 
+    depends_on:
+      - contenedor-backend   
+      - contenedor-frontend
+    restart: always
